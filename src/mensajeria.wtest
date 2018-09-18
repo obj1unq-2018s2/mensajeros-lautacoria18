@@ -1,13 +1,35 @@
 import mensajeros.*
 
-test "La mensajeria tiene a neo como empleado si lo agregarmos" {
+/*test "La mensajeria tiene a neo como empleado si lo agregarmos" {
 	mensajeria.contratar(neo)
 	assert.that(mensajeria.mensajeros().contains(neo))
 }
 
-test "Si neo es empleado, Hay un mensajero que puede enviar el paquete" {
+/*test "Si neo es empleado, Hay un mensajero que puede enviar el paquete" {
 	mensajeria.contratar(neo)
 	paquete.pagar()
 	paquete.destino(matrix)
 	assert.that(mensajeria.mensajeros().contains(neo))
+ }/* */
+ 
+test "puede llevar un paquete Roberto" {
+	
+	roberto.pesoDeRoberto(90)
+	paquete.estaPago(true)
+	paquete.destino(puenteBrooklyn)
+	roberto.modoViaje(camion)
+	camion.cantAcoplados(1) 	
+	assert.equals(true, roberto.puedeEntregar(paquete))
+	
+}
+
+test "Neo puede llevar" {
+	
+	neo.tieneCredito(true)
+	paquete.estaPago(false)
+	paquete.destino(matrix)
+	assert.equals(false, neo.puedeEntregar(paquete))
+	
+	
+	
 }
